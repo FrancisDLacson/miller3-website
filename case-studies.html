@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies — Miller³ Consulting</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ── MILLER³ CONSULTING — SHARED DESIGN SYSTEM ──────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy:      #1A2851;
+  --navy-deep: #111b38;
+  --navy-mid:  #243470;
+  --red:       #D32E27;
+  --red-muted: #a82420;
+  --silver:    #C4C4C0;
+  --light:     #F4F3F0;
+  --warm:      #EDECEA;
+  --body:      #3D3D3B;
+  --muted:     #7A7A77;
+  --rule:      rgba(26,40,81,0.10);
+  --white:     #ffffff;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; color: var(--body); background: var(--white); overflow-x: hidden; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; height: 72px; background: rgba(26,40,81,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.07); }
+.nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.nav-logo-mark { width: 36px; height: 36px; background: var(--red); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: white; letter-spacing: -1px; }
+.nav-logo-text { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: white; }
+.nav-logo-text span { color: var(--silver); }
+.nav-links { display: flex; align-items: center; gap: 0; list-style: none; }
+.nav-item { position: relative; }
+.nav-item > a { display: flex; align-items: center; gap: 4px; padding: 0 12px; height: 72px; font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
+.nav-item > a:hover { color: white; }
+.nav-item > a svg { width: 10px; height: 10px; fill: none; stroke: currentColor; stroke-width: 2; transition: transform 0.2s; }
+.nav-item:hover > a svg { transform: rotate(180deg); }
+.nav-dropdown { position: absolute; top: 100%; left: 0; background: var(--navy-deep); border-top: 2px solid var(--red); min-width: 240px; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: all 0.2s; }
+.nav-item:hover .nav-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-dropdown a { display: block; padding: 11px 20px; font-size: 11.5px; color: rgba(255,255,255,0.6); text-decoration: none; letter-spacing: 0.5px; transition: color 0.15s, background 0.15s; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.nav-dropdown a:hover { color: white; background: rgba(255,255,255,0.04); }
+.nav-cta { background: var(--red) !important; color: white !important; padding: 0 20px !important; letter-spacing: 0.2px !important; height: 40px !important; margin-left: 16px; border-radius: 40px; }
+.nav-cta:hover { background: var(--red-muted) !important; }
+
+/* PAGE HERO (inner pages) */
+.page-hero { background: var(--light); padding: 148px 72px 80px; position: relative; overflow: hidden; }
+.page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(26,40,81,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(26,40,81,0.02) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
+.page-hero-inner { position: relative; z-index: 2; max-width: 800px; }
+.page-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.page-eyebrow-dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; box-shadow: 0 0 8px rgba(211,46,39,0.6); }
+.page-eyebrow-line { width: 32px; height: 1px; background: var(--red); }
+.page-eyebrow-text { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--red); }
+.page-title { font-family: 'DM Sans', sans-serif; font-size: clamp(36px, 5vw, 58px); font-weight: 700; letter-spacing: -1px; line-height: 1.08; color: var(--navy); margin-bottom: 20px; }
+.page-title em { font-style: normal; font-weight: 700; color: var(--red); }
+.page-subtitle { font-size: 16px; font-weight: 400; line-height: 1.75; color: var(--muted); max-width: 580px; }
+
+/* SHARED SECTION STYLES */
+.section-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.eyebrow-line { width: 32px; height: 1px; background: var(--red); }
+.eyebrow-text { font-size: 9.5px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--red); }
+.section-title { font-family: 'DM Sans', sans-serif; font-size: clamp(28px, 3.5vw, 42px); font-weight: 700; letter-spacing: -0.8px; line-height: 1.12; color: var(--navy); margin-bottom: 48px; }
+.section-title em { font-style: normal; font-weight: 700; color: var(--red); }
+
+/* BUTTONS */
+.btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--red); color: white; padding: 14px 30px; border-radius: 40px; font-size: 13px; font-weight: 700; letter-spacing: 0.2px; text-transform: none; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+.btn-primary:hover { background: var(--red-muted); transform: translateY(-1px); }
+.btn-navy { display: inline-flex; align-items: center; gap: 10px; background: var(--navy); color: white; padding: 14px 30px; border-radius: 40px; font-size: 13px; font-weight: 700; letter-spacing: 0.2px; text-transform: none; text-decoration: none; transition: background 0.2s; }
+.btn-navy:hover { background: var(--navy-deep); }
+.btn-outline { display: inline-flex; align-items: center; gap: 10px; border: 1.5px solid var(--navy); color: var(--navy); padding: 13px 27px; border-radius: 40px; font-size: 13px; font-weight: 700; letter-spacing: 0.2px; text-transform: none; text-decoration: none; transition: all 0.2s; }
+.btn-outline:hover { background: var(--navy); color: white; }
+
+/* FOOTER */
+footer { background: var(--navy-deep); padding: 72px 72px 32px; border-top: 3px solid var(--red); }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 64px; margin-bottom: 64px; }
+.footer-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; color: white; margin-bottom: 4px; }
+.footer-logo-text span { color: var(--red); }
+.footer-tagline { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.5px; margin-bottom: 20px; line-height: 1.6; max-width: 300px; }
+.footer-col-title { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--silver); margin-bottom: 20px; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a { font-size: 12.5px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: white; }
+.footer-contact-item { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 8px; line-height: 1.5; }
+.footer-contact-item strong { color: rgba(255,255,255,0.65); font-weight: 400; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 28px; display: flex; align-items: center; }
+.footer-copy { font-size: 11px; color: rgba(255,255,255,0.2); }
+.footer-naics { font-size: 10px; color: rgba(255,255,255,0.18); letter-spacing: 0.5px; }
+
+/* CTA BAND */
+.cta-band { background: var(--navy); padding: 80px 72px; display: flex; align-items: center; justify-content: space-between; gap: 48px; }
+.cta-band-text {}
+.cta-band-title { font-family: 'DM Sans', sans-serif; font-size: 34px; font-weight: 700; letter-spacing: -0.6px; color: white; margin-bottom: 10px; }
+.cta-band-title em { font-style: normal; font-weight: 700; color: var(--red); }
+.cta-band-sub { font-size: 14px; color: rgba(255,255,255,0.45); }
+.cta-band-actions { display: flex; gap: 16px; flex-shrink: 0; margin-right: 220px; }
+
+
+.cs-intro { padding: 80px 72px; }
+.cs-intro-body { font-size: 15.5px; line-height: 1.85; color: var(--body); max-width: 720px; }
+.cs-grid { padding: 0 72px 100px; display: flex; flex-direction: column; gap: 2px; }
+.cs-card { display: grid; grid-template-columns: 280px 1fr; gap: 0; border-left: 4px solid var(--red); background: white; }
+.cs-card:nth-child(even) { background: var(--light); }
+.cs-card-meta { padding: 40px 36px; border-right: 1px solid var(--rule); display: flex; flex-direction: column; gap: 12px; }
+.cs-client { font-size: 9.5px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 4px; }
+.cs-client-name { font-family: "Cormorant Garamond", serif; font-size: 24px; font-weight: 400; color: var(--navy); line-height: 1.2; margin-bottom: 4px; }
+.cs-client-loc { font-size: 11.5px; color: var(--muted); margin-bottom: 12px; }
+.cs-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.cs-tag { border: 1px solid var(--rule); padding: 4px 10px; font-size: 10px; color: var(--muted); }
+.cs-card-content { padding: 40px 48px; }
+.cs-engagement { font-size: 9.5px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+.cs-headline { font-family: "Cormorant Garamond", serif; font-size: 24px; font-weight: 300; color: var(--navy); line-height: 1.3; margin-bottom: 20px; }
+.cs-body { font-size: 13.5px; line-height: 1.8; color: var(--body); margin-bottom: 16px; }
+.cs-outcomes { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--rule); }
+.cs-outcomes-label { font-size: 9.5px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.cs-outcome-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.cs-outcome-list li { font-size: 13px; color: var(--body); padding-left: 14px; position: relative; }
+.cs-outcome-list li::before { content: ""; position: absolute; left: 0; top: 8px; width: 6px; height: 1px; background: var(--red); }
+
+
+/* ── GLOBAL POLISH: tighter spacing + larger type ───────────────────────── */
+
+/* Body base size up */
+body { font-size: 16px; }
+
+/* Section padding: was 100px → 64px, was 80px → 48px */
+.page-hero { padding-top: 128px; padding-bottom: 56px; }
+.mission-section, .founder-section, .timeline-section,
+.features-section, .personas-section, .contact-section,
+.team-section { padding-top: 64px; padding-bottom: 64px; }
+.serve-section, .deliverables-section, .approach-section,
+.sector-section, .map-section, .join-section,
+.newsletter-section, .clients-section { padding-top: 48px; padding-bottom: 48px; }
+.cta-band { padding-top: 56px; padding-bottom: 56px; }
+footer { padding-top: 56px; }
+.footer-top { margin-bottom: 48px; }
+
+/* Section title spacing down */
+.section-title { margin-bottom: 32px; }
+
+/* Body text up */
+.mission-body, .founder-body, .timeline-body,
+p, .serve-desc, .value-desc { font-size: 15.5px; line-height: 1.78; }
+
+/* Labels and eyebrows — slightly bigger */
+.eyebrow-text, .page-eyebrow-text { font-size: 10.5px; letter-spacing: 2.5px; }
+
+/* Footer link size up */
+.footer-links a { font-size: 13.5px; }
+.footer-contact-item, .footer-copy { font-size: 12.5px; }
+.footer-naics { font-size: 11px; }
+.footer-col-title { font-size: 10px; }
+.footer-tagline { font-size: 12px; }
+
+/* Nav item size up slightly */
+.nav-item > a { font-size: 11.5px; }
+.nav-dropdown a { font-size: 12px; }
+
+/* Card / cell body text up */
+.serve-title, .value-title, .proc-title { font-size: 14px; }
+.serve-desc, .value-desc { font-size: 13.5px; }
+
+/* Page subtitle */
+.page-subtitle { font-size: 16px; }
+
+/* Reduce gap in grids */
+.footer-top { gap: 48px; }
+.serve-grid, .serve-grid-bottom { margin-top: 32px; }
+
+</style>
+</head>
+<body>
+<!-- SHARED NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">M³</div>
+    <div class="nav-logo-text">Miller<span>³</span> Consulting</div>
+  </a>
+  <ul class="nav-links">
+    <li class="nav-item">
+      <a href="about.html">About <svg viewBox="0 0 10 10"><path d="M2 3l3 4 3-4"/></svg></a>
+      <div class="nav-dropdown">
+        <a href="about.html">Who We Are</a>
+        <a href="team.html">Our Team</a>
+        <a href="founder.html">Our Founder</a>
+        <a href="history.html">Our History</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="#">Services <svg viewBox="0 0 10 10"><path d="M2 3l3 4 3-4"/></svg></a>
+      <div class="nav-dropdown">
+        <a href="service-procurement.html">Procurement Optimization</a>
+        <a href="service-data.html">Data & Systems Integration</a>
+        <a href="service-supplier.html">Supplier & Market Intelligence</a>
+        <a href="service-economic.html">Economic & Operational Analysis</a>
+        <a href="service-outreach.html">Vendor Outreach & Capacity</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="https://procuretopayintelligence.com/" target="_blank" rel="noopener">P2P Platform</a>
+    </li>
+    <li class="nav-item">
+      <a href="#">Clients <svg viewBox="0 0 10 10"><path d="M2 3l3 4 3-4"/></svg></a>
+      <div class="nav-dropdown">
+        <a href="clients.html">Our Clients</a>
+        <a href="case-studies.html">Case Studies</a>
+      </div>
+    </li>
+    <li class="nav-item"><a href="insights.html">Strategic Insights</a></li>
+    <li class="nav-item"><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-eyebrow"><div class="page-eyebrow-dot"></div><div class="page-eyebrow-line"></div><div class="page-eyebrow-text">Our Work</div></div>
+    <h1 class="page-title">Case Studies</h1>
+    <p class="page-subtitle">Selected engagements from 40 years of institutional transformation — in procurement, supplier diversity, data systems, and economic analysis.</p>
+  </div>
+</div>
+
+<div class="cs-intro">
+  <p class="cs-intro-body">Every engagement is different. But across 250+ client relationships, certain patterns emerge: the institutions that see the greatest results are the ones that treat procurement as a strategic system — and partner with us to build it that way.</p>
+</div>
+
+<div class="cs-grid">
+  <div class="cs-card">
+    <div class="cs-card-meta">
+      <div><div class="cs-client">Current Engagement</div><div class="cs-client-name">City of Raleigh</div><div class="cs-client-loc">North Carolina · Municipal Government</div></div>
+      <div class="cs-tags"><span class="cs-tag">Procurement Optimization</span><span class="cs-tag">Data Systems</span><span class="cs-tag">Supplier Engagement</span></div>
+    </div>
+    <div class="cs-card-content">
+      <div class="cs-engagement">Ongoing Advisory &amp; Implementation</div>
+      <div class="cs-headline">Building a modern procurement intelligence infrastructure for one of North Carolina's largest cities.</div>
+      <p class="cs-body">Miller³ provides ongoing advisory and implementation support to the City of Raleigh focused on procurement optimization, data systems alignment, and supplier engagement strategy. The engagement spans procurement code modernization, vendor analytics, and the implementation of real-time performance monitoring.</p>
+      <p class="cs-body">Raleigh serves as Miller³'s de facto reference client for the Procurement Intelligence Platform — a city that has committed to data-driven governance and is actively building the infrastructure to sustain it.</p>
+      <div class="cs-outcomes"><div class="cs-outcomes-label">Areas of Engagement</div><ul class="cs-outcome-list"><li>Procurement systems assessment and modernization advisory</li><li>Supplier diversity data analysis and program strategy</li><li>Real-time procurement performance monitoring implementation</li><li>MWBE compliance platform procurement support</li></ul></div>
+    </div>
+  </div>
+
+  <div class="cs-card">
+    <div class="cs-card-meta">
+      <div><div class="cs-client">Completed Engagement</div><div class="cs-client-name">City of Philadelphia &amp; OEO</div><div class="cs-client-loc">Pennsylvania · Municipal Government</div></div>
+      <div class="cs-tags"><span class="cs-tag">Disparity Study</span><span class="cs-tag">Policy Evaluation</span><span class="cs-tag">Workforce Participation</span></div>
+    </div>
+    <div class="cs-card-content">
+      <div class="cs-engagement">Multi-Concurrent Analyses</div>
+      <div class="cs-headline">Delivering rigorous concurrent analyses across procurement systems, workforce participation, and policy evaluation.</div>
+      <p class="cs-body">Miller³ delivered multiple concurrent analyses for the City of Philadelphia and its Office of Economic Opportunity — covering procurement systems, workforce participation programs, and policy evaluation across more than 200 projects.</p>
+      <p class="cs-body">The engagement demonstrated Miller³'s capacity to manage complex, simultaneous workstreams in a major metropolitan government context — producing findings that informed both legislative and operational decision-making.</p>
+      <div class="cs-outcomes"><div class="cs-outcomes-label">Key Outcomes</div><ul class="cs-outcome-list"><li>Procurement system evaluation across 200+ active projects</li><li>Workforce participation analysis and policy recommendations</li><li>Disparity and availability analysis supporting program design</li><li>Findings presented to city leadership and OEO staff</li></ul></div>
+    </div>
+  </div>
+
+  <div class="cs-card">
+    <div class="cs-card-meta">
+      <div><div class="cs-client">Completed Engagement</div><div class="cs-client-name">Bay Area Rapid Transit</div><div class="cs-client-loc">California · Transit Authority</div></div>
+      <div class="cs-tags"><span class="cs-tag">Supplier Diversity</span><span class="cs-tag">Disparity Study</span><span class="cs-tag">Stakeholder Engagement</span></div>
+    </div>
+    <div class="cs-card-content">
+      <div class="cs-engagement">Disparity Study &amp; Supplier Diversity Advisory</div>
+      <div class="cs-headline">Serving as a trusted, objective advisor through complex community conversations and board-level scrutiny.</div>
+      <p class="cs-body">Miller³ conducted a comprehensive disparity and availability study for BART — one of the nation's largest and most politically complex transit systems. The engagement required navigating difficult community conversations, board presentations, and media scrutiny while maintaining analytical objectivity and institutional trust.</p>
+      <p class="cs-body">BART's leadership cited Miller³'s ability to understand organizational culture and stand alongside the team through challenging moments as the defining characteristic of the engagement.</p>
+      <div class="cs-outcomes"><div class="cs-outcomes-label">Key Outcomes</div><ul class="cs-outcome-list"><li>Legally defensible disparity and availability study</li><li>Supplier diversity program recommendations adopted by BART Board</li><li>Stakeholder engagement across diverse community groups</li><li>Trusted advisor relationship extending beyond initial engagement</li></ul></div>
+    </div>
+  </div>
+
+  <div class="cs-card">
+    <div class="cs-card-meta">
+      <div><div class="cs-client">Completed Engagement</div><div class="cs-client-name">MetroHealth System</div><div class="cs-client-loc">Cleveland, Ohio · Health System</div></div>
+      <div class="cs-tags"><span class="cs-tag">Procurement Assessment</span><span class="cs-tag">Vendor Engagement</span><span class="cs-tag">Operational Improvement</span></div>
+    </div>
+    <div class="cs-card-content">
+      <div class="cs-engagement">Procurement &amp; Vendor Engagement</div>
+      <div class="cs-headline">Strengthening procurement performance and vendor engagement at one of Cleveland's leading health systems.</div>
+      <p class="cs-body">Miller³ conducted procurement-related assessments and operational improvements for MetroHealth System — focused on strengthening vendor engagement processes, improving procurement performance measurement, and building greater accountability across the system's contracting operations.</p>
+      <p class="cs-body">The engagement reflects Miller³'s capacity to apply public-sector procurement expertise to health system contexts — where procurement complexity, vendor relationships, and community benefit obligations intersect.</p>
+      <div class="cs-outcomes"><div class="cs-outcomes-label">Key Outcomes</div><ul class="cs-outcome-list"><li>Procurement operations assessment and improvement roadmap</li><li>Vendor engagement program design and implementation support</li><li>Performance measurement framework for procurement operations</li><li>Supplier diversity program strategy development</li></ul></div>
+    </div>
+  </div>
+
+  <div class="cs-card">
+    <div class="cs-card-meta">
+      <div><div class="cs-client">Completed Engagement</div><div class="cs-client-name">Miami-Dade County Public Schools</div><div class="cs-client-loc">Florida · Education</div></div>
+      <div class="cs-tags"><span class="cs-tag">Disparity Study</span><span class="cs-tag">MWBE Program</span><span class="cs-tag">Public Hearing</span></div>
+    </div>
+    <div class="cs-card-content">
+      <div class="cs-engagement">Disparity Study (Multiple)</div>
+      <div class="cs-headline">Delivering back-to-back disparity studies that guided MWBE program design for one of the nation's largest school systems.</div>
+      <p class="cs-body">Miller³ conducted two successive disparity studies for Miami-Dade County Public Schools — one of the largest school systems in the United States. Both studies were presented publicly, including at a major public hearing featuring the Superintendent, and provided the evidentiary foundation for the district's minority business participation programs.</p>
+      <p class="cs-body">The work demonstrated Miller³'s ability to manage high-profile, publicly scrutinized engagements with the rigor and integrity that large institutional clients require.</p>
+      <div class="cs-outcomes"><div class="cs-outcomes-label">Key Outcomes</div><ul class="cs-outcome-list"><li>Two legally defensible disparity studies delivered</li><li>Public hearing presentation to district leadership and community</li><li>MWBE program design recommendations adopted</li><li>Client cited Miller³ quality as exceeding expectations</li></ul></div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="cta-band-text"><div class="cta-band-title">Ready to be<br><em>our next case study?</em></div><div class="cta-band-sub">Tell us about your institution's procurement challenges and we'll talk about what's possible.</div></div>
+  <div class="cta-band-actions"><a href="https://outlook.office.com/book/Miller3Consulting1@miller3group.onmicrosoft.com/?ismsaljsauthenabled" target="_blank" rel="noopener" class="btn-primary">Start a Conversation</a></div>
+</div>
+
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo-text">Miller<span>³</span> Consulting, Inc.</div>
+      <div class="footer-tagline">Helping institutions move from fragmented processes to coordinated, data-driven performance.</div>
+      <div class="footer-contact-item">info@miller3group.com &nbsp;·&nbsp; (404) 827-9019</div>
+      <div class="footer-contact-item">260 Peachtree St, Suite 501, Atlanta, GA 30303</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="service-procurement.html">Procurement Optimization</a></li>
+        <li><a href="service-data.html">Data & Systems Integration</a></li>
+        <li><a href="service-supplier.html">Supplier & Market Intelligence</a></li>
+        <li><a href="service-economic.html">Economic Analysis</a></li>
+        <li><a href="service-outreach.html">Vendor Outreach</a></li>
+        <li><a href="https://procuretopayintelligence.com/" target="_blank" rel="noopener">P2P Platform</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="about.html">Who We Are</a></li>
+        <li><a href="founder.html">Our Founder</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="history.html">Our History</a></li>
+        <li><a href="insights.html">Strategic Insights</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Work</div>
+      <ul class="footer-links">
+        <li><a href="clients.html">Our Clients</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Miller³ Consulting, Inc. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>

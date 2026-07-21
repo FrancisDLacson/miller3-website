@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our History — Miller³ Consulting</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ── MILLER³ CONSULTING — SHARED DESIGN SYSTEM ──────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy:      #1A2851;
+  --navy-deep: #111b38;
+  --navy-mid:  #243470;
+  --red:       #D32E27;
+  --red-muted: #a82420;
+  --silver:    #C4C4C0;
+  --light:     #F4F3F0;
+  --warm:      #EDECEA;
+  --body:      #3D3D3B;
+  --muted:     #7A7A77;
+  --rule:      rgba(26,40,81,0.10);
+  --white:     #ffffff;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; color: var(--body); background: var(--white); overflow-x: hidden; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; height: 72px; background: rgba(26,40,81,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.07); }
+.nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.nav-logo-mark { width: 36px; height: 36px; background: var(--red); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: white; letter-spacing: -1px; }
+.nav-logo-text { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: white; }
+.nav-logo-text span { color: var(--silver); }
+.nav-links { display: flex; align-items: center; gap: 0; list-style: none; }
+.nav-item { position: relative; }
+.nav-item > a { display: flex; align-items: center; gap: 4px; padding: 0 12px; height: 72px; font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
+.nav-item > a:hover { color: white; }
+.nav-item > a svg { width: 10px; height: 10px; fill: none; stroke: currentColor; stroke-width: 2; transition: transform 0.2s; }
+.nav-item:hover > a svg { transform: rotate(180deg); }
+.nav-dropdown { position: absolute; top: 100%; left: 0; background: var(--navy-deep); border-top: 2px solid var(--red); min-width: 240px; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: all 0.2s; }
+.nav-item:hover .nav-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-dropdown a { display: block; padding: 11px 20px; font-size: 11.5px; color: rgba(255,255,255,0.6); text-decoration: none; letter-spacing: 0.5px; transition: color 0.15s, background 0.15s; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.nav-dropdown a:hover { color: white; background: rgba(255,255,255,0.04); }
+.nav-cta { background: var(--red) !important; color: white !important; padding: 0 20px !important; letter-spacing: 0.2px !important; height: 40px !important; margin-left: 16px; border-radius: 40px; }
+.nav-cta:hover { background: var(--red-muted) !important; }
+
+/* PAGE HERO (inner pages) */
+.page-hero { background: var(--light); padding: 148px 72px 80px; position: relative; overflow: hidden; }
+.page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(26,40,81,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(26,40,81,0.02) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
+.page-hero-inner { position: relative; z-index: 2; max-width: 800px; }
+.page-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.page-eyebrow-dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; box-shadow: 0 0 8px rgba(211,46,39,0.6); }
+.page-eyebrow-line { width: 32px; height: 1px; background: var(--red); }
+.page-eyebrow-text { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--red); }
+.page-title { font-family: 'DM Sans', sans-serif; font-size: clamp(36px, 5vw, 58px); font-weight: 700; letter-spacing: -1px; line-height: 1.08; color: var(--navy); margin-bottom: 20px; }
+.page-title em { font-style: normal; font-weight: 700; color: var(--red); }
+.page-subtitle { font-size: 16px; font-weight: 400; line-height: 1.75; color: var(--muted); max-width: 580px; }
+
+/* SHARED SECTION STYLES */
+.section-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.eyebrow-line { width: 32px; height: 1px; background: var(--red); }
+.eyebrow-text { font-size: 9.5px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--red); }
+.section-title { font-family: 'DM Sans', sans-serif; font-size: clamp(28px, 3.5vw, 42px); font-weight: 700; letter-spacing: -0.8px; line-height: 1.12; color: var(--navy); margin-bottom: 48px; }
+.section-title em { font-style: normal; font-weight: 700; color: var(--red); }
+
+/* BUTTONS */
+.btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--red); color: white; padding: 14px 30px; border-radius: 40px; font-size: 13px; font-weight: 700; letter-spacing: 0.2px; text-transform: none; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+.btn-primary:hover { background: var(--red-muted); transform: translateY(-1px); }
+.btn-navy { display: inline-flex; align-items: center; gap: 10px; background: var(--navy); color: white; padding: 14px 30px; border-radius: 40px; font-size: 13px; font-weight: 700; letter-spacing: 0.2px; text-transform: none; text-decoration: none; transition: background 0.2s; }
+.btn-navy:hover { background: var(--navy-deep); }
+.btn-outline { display: inline-flex; align-items: center; gap: 10px; border: 1.5px solid var(--navy); color: var(--navy); padding: 13px 27px; border-radius: 40px; font-size: 13px; font-weight: 700; letter-spacing: 0.2px; text-transform: none; text-decoration: none; transition: all 0.2s; }
+.btn-outline:hover { background: var(--navy); color: white; }
+
+/* FOOTER */
+footer { background: var(--navy-deep); padding: 72px 72px 32px; border-top: 3px solid var(--red); }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 64px; margin-bottom: 64px; }
+.footer-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; color: white; margin-bottom: 4px; }
+.footer-logo-text span { color: var(--red); }
+.footer-tagline { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.5px; margin-bottom: 20px; line-height: 1.6; max-width: 300px; }
+.footer-col-title { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--silver); margin-bottom: 20px; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a { font-size: 12.5px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: white; }
+.footer-contact-item { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 8px; line-height: 1.5; }
+.footer-contact-item strong { color: rgba(255,255,255,0.65); font-weight: 400; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 28px; display: flex; align-items: center; }
+.footer-copy { font-size: 11px; color: rgba(255,255,255,0.2); }
+.footer-naics { font-size: 10px; color: rgba(255,255,255,0.18); letter-spacing: 0.5px; }
+
+/* CTA BAND */
+.cta-band { background: var(--navy); padding: 80px 72px; display: flex; align-items: center; justify-content: space-between; gap: 48px; }
+.cta-band-text {}
+.cta-band-title { font-family: 'DM Sans', sans-serif; font-size: 34px; font-weight: 700; letter-spacing: -0.6px; color: white; margin-bottom: 10px; }
+.cta-band-title em { font-style: normal; font-weight: 700; color: var(--red); }
+.cta-band-sub { font-size: 14px; color: rgba(255,255,255,0.45); }
+.cta-band-actions { display: flex; gap: 16px; flex-shrink: 0; }
+
+
+.timeline-section { padding: 100px 72px; }
+.timeline { display: flex; flex-direction: column; gap: 0; margin-top: 60px; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 152px; top: 0; bottom: 0; width: 1px; background: var(--rule); }
+.timeline-item { display: grid; grid-template-columns: 120px 1fr; gap: 64px; padding-bottom: 52px; position: relative; }
+.timeline-year { font-family: "Cormorant Garamond", serif; font-size: 22px; font-weight: 300; color: var(--red); text-align: right; padding-top: 4px; position: relative; }
+.timeline-year::after { content: ""; position: absolute; left: calc(100% + 27px); top: 10px; width: 10px; height: 10px; border-radius: 50%; background: var(--red); border: 2px solid white; box-shadow: 0 0 0 1px var(--red); transform: translateX(-50%); }
+.timeline-content { padding-top: 0; }
+.timeline-title { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 8px; }
+.timeline-body { font-size: 14px; line-height: 1.8; color: var(--body); }
+.history-legacy { background: var(--navy); padding: 100px 72px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.legacy-body { font-size: 15.5px; line-height: 1.85; color: rgba(255,255,255,0.65); margin-bottom: 20px; }
+.legacy-quote { border-left: 2px solid var(--red); padding: 20px 28px; margin: 32px 0; }
+.legacy-quote p { font-family: "Cormorant Garamond", serif; font-size: 22px; font-style: italic; font-weight: 300; color: rgba(255,255,255,0.85); line-height: 1.6; }
+.legacy-blocks-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.lb2 { background: rgba(255,255,255,0.04); padding: 36px 28px; border-top: 2px solid rgba(255,255,255,0.06); }
+.lb2:hover { border-color: var(--red); }
+.lb2-num { font-family: "Cormorant Garamond", serif; font-size: 44px; font-weight: 300; color: white; line-height: 1; margin-bottom: 8px; }
+.lb2-label { font-size: 10px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+
+
+/* ── GLOBAL POLISH: tighter spacing + larger type ───────────────────────── */
+
+/* Body base size up */
+body { font-size: 16px; }
+
+/* Section padding: was 100px → 64px, was 80px → 48px */
+.page-hero { padding-top: 128px; padding-bottom: 56px; }
+.mission-section, .founder-section, .timeline-section,
+.features-section, .personas-section, .contact-section,
+.team-section { padding-top: 64px; padding-bottom: 64px; }
+.serve-section, .deliverables-section, .approach-section,
+.sector-section, .map-section, .join-section,
+.newsletter-section, .clients-section { padding-top: 48px; padding-bottom: 48px; }
+.cta-band { padding-top: 56px; padding-bottom: 56px; }
+footer { padding-top: 56px; }
+.footer-top { margin-bottom: 48px; }
+
+/* Section title spacing down */
+.section-title { margin-bottom: 32px; }
+
+/* Body text up */
+.mission-body, .founder-body, .timeline-body,
+p, .serve-desc, .value-desc { font-size: 15.5px; line-height: 1.78; }
+
+/* Labels and eyebrows — slightly bigger */
+.eyebrow-text, .page-eyebrow-text { font-size: 10.5px; letter-spacing: 2.5px; }
+
+/* Footer link size up */
+.footer-links a { font-size: 13.5px; }
+.footer-contact-item, .footer-copy { font-size: 12.5px; }
+.footer-naics { font-size: 11px; }
+.footer-col-title { font-size: 10px; }
+.footer-tagline { font-size: 12px; }
+
+/* Nav item size up slightly */
+.nav-item > a { font-size: 11.5px; }
+.nav-dropdown a { font-size: 12px; }
+
+/* Card / cell body text up */
+.serve-title, .value-title, .proc-title { font-size: 14px; }
+.serve-desc, .value-desc { font-size: 13.5px; }
+
+/* Page subtitle */
+.page-subtitle { font-size: 16px; }
+
+/* Reduce gap in grids */
+.footer-top { gap: 48px; }
+.serve-grid, .serve-grid-bottom { margin-top: 32px; }
+
+</style>
+</head>
+<body>
+<!-- SHARED NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">M³</div>
+    <div class="nav-logo-text">Miller<span>³</span> Consulting</div>
+  </a>
+  <ul class="nav-links">
+    <li class="nav-item">
+      <a href="about.html">About <svg viewBox="0 0 10 10"><path d="M2 3l3 4 3-4"/></svg></a>
+      <div class="nav-dropdown">
+        <a href="about.html">Who We Are</a>
+        <a href="team.html">Our Team</a>
+        <a href="founder.html">Our Founder</a>
+        <a href="history.html">Our History</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="#">Services <svg viewBox="0 0 10 10"><path d="M2 3l3 4 3-4"/></svg></a>
+      <div class="nav-dropdown">
+        <a href="service-procurement.html">Procurement Optimization</a>
+        <a href="service-data.html">Data & Systems Integration</a>
+        <a href="service-supplier.html">Supplier & Market Intelligence</a>
+        <a href="service-economic.html">Economic & Operational Analysis</a>
+        <a href="service-outreach.html">Vendor Outreach & Capacity</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="https://procuretopayintelligence.com/" target="_blank" rel="noopener">P2P Platform</a>
+    </li>
+    <li class="nav-item">
+      <a href="#">Clients <svg viewBox="0 0 10 10"><path d="M2 3l3 4 3-4"/></svg></a>
+      <div class="nav-dropdown">
+        <a href="clients.html">Our Clients</a>
+        <a href="case-studies.html">Case Studies</a>
+      </div>
+    </li>
+    <li class="nav-item"><a href="insights.html">Strategic Insights</a></li>
+    <li class="nav-item"><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-eyebrow"><div class="page-eyebrow-dot"></div><div class="page-eyebrow-line"></div><div class="page-eyebrow-text">Our History</div></div>
+    <h1 class="page-title">40 Years of<br><em>Institutional Transformation.</em></h1>
+    <p class="page-subtitle">From a one-man shop in Atlanta to one of the nation's leading institutional solutions firms — a timeline of the work, the milestones, and the people who built Miller³.</p>
+  </div>
+</div>
+
+<div class="timeline-section">
+  <div class="section-eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">A Timeline</div></div>
+  <h2 class="section-title">From Atlanta to the nation —<br><em>four decades of impact.</em></h2>
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-year">1972</div><div class="timeline-content"><div class="timeline-title">D.J. Miller Graduates Morehouse College</div><div class="timeline-body">Dave J. Miller, Sr. graduates from Morehouse College in Atlanta — becoming a proud member of Omega Psi Phi, Psi Chapter. His first role: management trainee at General Motors.</div></div></div>
+    <div class="timeline-item"><div class="timeline-year">1970s</div><div class="timeline-content"><div class="timeline-title">City of Atlanta — A Founding Role in MWBE</div><div class="timeline-body">Dave joins the City of Atlanta under Mayor Maynard Jackson — Atlanta's first Black Mayor. As Director of the Office of Contract Compliance, he creates and implements one of the most successful MWBE programs in American history.</div></div></div>
+    <div class="timeline-item"><div class="timeline-year">1980s</div><div class="timeline-content"><div class="timeline-title">Airport Development &amp; Historic Land Transactions</div><div class="timeline-body">As Director of Airport Development at Hartsfield International, Dave negotiates over $450M in annual transactions and orchestrates the largest private-public land purchase in Georgia history — 32 parcels, 11 developers, $1B+ in development value.</div></div></div>
+    <div class="timeline-item"><div class="timeline-year">1986</div><div class="timeline-content"><div class="timeline-title">D.J. Miller &amp; Associates, Inc. Founded</div><div class="timeline-body">Dave founds D.J. Miller &amp; Associates, Inc. in Atlanta — bringing 15 years of public sector expertise into a private practice focused on procurement, economic development, and institutional consulting.</div></div></div>
+    <div class="timeline-item"><div class="timeline-year">1988</div><div class="timeline-content"><div class="timeline-title">The Nation's First Disparity Study</div><div class="timeline-body">The firm conducts what is widely recognized as the first disparity study in the United States — anticipating the Supreme Court's landmark ruling in City of Richmond v. J.A. Croson Co. that set-asides require a higher evidentiary burden. The firm becomes one of the most sought-after in the country for legally defensible disparity analysis.</div></div></div>
+    <div class="timeline-item"><div class="timeline-year">1990s</div><div class="timeline-content"><div class="timeline-title">National Expansion — Airports, Transit, Health Systems</div><div class="timeline-body">The firm expands its national footprint — conducting disparity studies, procurement assessments, and supplier diversity work for transit authorities, airports, health systems, and municipalities across more than 20 states.</div></div></div>
+    <div class="timeline-item"><div class="timeline-year">2000s</div><div class="timeline-content"><div class="timeline-title">250+ Engagements — Building a National Track Record</div><div class="timeline-body">The firm reaches 250+ client engagements and $10B+ in procurement spend analyzed. Major engagements include BART, Philadelphia, Miami-Dade County Public Schools, and dozens of southeastern municipalities.</div></div></div>
+    <div class="timeline-item"><div class="timeline-year">2020s</div><div class="timeline-content"><div class="timeline-title">Miller³ Consulting — The Next Generation</div><div class="timeline-body">Dave Miller Jr. (CEO) and Lauren Rosa (Chief Growth Officer) lead the firm's next chapter — evolving from disparity studies into a full institutional solutions firm with the Procurement Intelligence Platform, data systems integration, and a national growth strategy.</div></div></div>
+    <div class="timeline-item"><div class="timeline-year">Today</div><div class="timeline-content"><div class="timeline-title">Modern Procurement. Intelligent Systems. Stronger Markets.</div><div class="timeline-body">Miller³ Consulting operates as a second-generation institutional solutions firm with 40 years of history, 250+ engagements, and a growing technology platform — continuing D.J. Miller's legacy of building institutions that work better for everyone.</div></div></div>
+  </div>
+</div>
+
+<div class="history-legacy">
+  <div>
+    <div class="section-eyebrow"><div class="eyebrow-line" style="background:rgba(255,255,255,0.3)"></div><div class="eyebrow-text" style="color:rgba(255,255,255,0.4)">The Legacy</div></div>
+    <h2 class="section-title" style="color:white;margin-bottom:28px;">Built on a foundation<br><em>that holds.</em></h2>
+    <p class="legacy-body">D.J. Miller built something rare: a consulting firm that didn't just serve institutions, but changed them. His work in Atlanta in the 1970s and 1980s laid the groundwork for inclusive procurement programs that have since been replicated across the country.</p>
+    <div class="legacy-quote"><p>"It's better to be kingmaker than king."</p></div>
+    <p class="legacy-body">That philosophy — building systems and programs that outlast any individual engagement — is the foundation on which Miller³ continues to operate. The next generation of leadership carries that forward, with new tools, new markets, and a deeper commitment to the same fundamental mission.</p>
+    <a href="founder.html" class="btn-primary" style="margin-top:8px;">Read Our Founder's Story →</a>
+  </div>
+  <div class="legacy-blocks-2">
+    <div class="lb2"><div class="lb2-num">1986</div><div class="lb2-label">Year Founded</div></div>
+    <div class="lb2"><div class="lb2-num">1988</div><div class="lb2-label">First Disparity Study</div></div>
+    <div class="lb2"><div class="lb2-num">40</div><div class="lb2-label">Years of Service</div></div>
+    <div class="lb2"><div class="lb2-num">250+</div><div class="lb2-label">Client Engagements</div></div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="cta-band-text"><div class="cta-band-title">Be part of the<br><em>next chapter.</em></div><div class="cta-band-sub">Miller³ is actively growing its client base, its platform, and its national footprint. Let's talk.</div></div>
+  <div class="cta-band-actions"><a href="https://outlook.office.com/book/Miller3Consulting1@miller3group.onmicrosoft.com/?ismsaljsauthenabled" target="_blank" rel="noopener" class="btn-primary">Start a Conversation</a></div>
+</div>
+
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo-text">Miller<span>³</span> Consulting, Inc.</div>
+      <div class="footer-tagline">Helping institutions move from fragmented processes to coordinated, data-driven performance.</div>
+      <div class="footer-contact-item">info@miller3group.com &nbsp;·&nbsp; (404) 827-9019</div>
+      <div class="footer-contact-item">260 Peachtree St, Suite 501, Atlanta, GA 30303</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="service-procurement.html">Procurement Optimization</a></li>
+        <li><a href="service-data.html">Data & Systems Integration</a></li>
+        <li><a href="service-supplier.html">Supplier & Market Intelligence</a></li>
+        <li><a href="service-economic.html">Economic Analysis</a></li>
+        <li><a href="service-outreach.html">Vendor Outreach</a></li>
+        <li><a href="https://procuretopayintelligence.com/" target="_blank" rel="noopener">P2P Platform</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="about.html">Who We Are</a></li>
+        <li><a href="founder.html">Our Founder</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="history.html">Our History</a></li>
+        <li><a href="insights.html">Strategic Insights</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Work</div>
+      <ul class="footer-links">
+        <li><a href="clients.html">Our Clients</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Miller³ Consulting, Inc. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
